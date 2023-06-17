@@ -1,0 +1,40 @@
+<div class="px-4">
+  <h1>Bookings</h1>
+
+  <% if @bookings.present? %>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped table-bordered">
+        <thead class="text-nowrap">
+          <tr >
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Animal Name</th>
+            <th scope="col">Animal Type</th>
+            <th scope="col">Hours Requested</th>
+            <th scope="col">Service Date</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td>
+                <a class="link-dark" href=<%=booking_path(booking)%>>
+                  <%= booking.client_first_name %>
+                </a>
+              </td>
+              <td><%= booking.client_last_name %></td>
+              <td><%= booking.animal_name %></td>
+              <td><%= booking.animal_type.titleize%></td>
+              <td><%= booking.service_length_hours %></td>
+              <td><%= booking.service_date %></td>
+              <td><%= booking.price.format %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    There are no saved Bookings
+  <% end %>
+</div>

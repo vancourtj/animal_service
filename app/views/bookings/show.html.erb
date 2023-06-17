@@ -1,0 +1,44 @@
+<div class="px-4">
+  <h1>Booking</h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered w-50">
+      <thead class="text-nowrap">
+        <tr>
+          <th scope="col">Attribute</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>First Name</td>
+          <td><%= @booking.client_first_name %></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><%= @booking.client_last_name %></td>
+        </tr>
+        <tr>
+          <td>Animal Name</td>
+          <td><%= @booking.animal_name %></td>
+        </tr>
+        <tr>
+          <td>Animal Type</td>
+          <td><%= @booking.animal_type.titleize %></td>
+        </tr>
+        <tr>
+          <td>Hours Requested</td>
+          <td><%= @booking.service_length_hours %></td>
+        </tr>
+        <tr>
+          <td>Service Date</td>
+          <td><%= @booking.service_date %></td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td><%= @booking.price.format %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
