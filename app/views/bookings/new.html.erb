@@ -5,12 +5,12 @@
 
   <%= bootstrap_form_with(model: @booking, local: true, inline_errors: true, layout: :horizontal, label_col: "col-sm-1", control_col: "col-sm-4") do |f| %>
 
-    <%= f.text_field :client_first_name, label: "First Name", placeholder: "First Name" %>
-    <%= f.text_field :client_last_name, label: "Last Name", placeholder: "Last Name" %>
-    <%= f.text_field :animal_name, label: "Animal Name", placeholder: "Mittens" %>
+    <%= f.text_field :client_first_name, label: "First Name", placeholder: "First Name", required: true %>
+    <%= f.text_field :client_last_name, label: "Last Name", placeholder: "Last Name", required: true %>
+    <%= f.text_field :animal_name, label: "Animal Name", placeholder: "Mittens", required: true %>
     <%= f.select :animal_type, Booking::ANIMAL_TYPES.map(&:titleize).zip(Booking::ANIMAL_TYPES), include_blank: 'Select an animal type', label: "Animal Type" %>
-    <%= f.number_field :service_length_hours, label: "Hours Required", placeholder: 2, min: 2, max: 8 %>
-    <%= f.date_field :service_date, label: "Date of Service" %>
+    <%= f.number_field :service_length_hours, label: "Hours Required", placeholder: 2, min: 2, max: 8, required: true %>
+    <%= f.date_field :service_date, label: "Date of Service", required: true  %>
 
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
